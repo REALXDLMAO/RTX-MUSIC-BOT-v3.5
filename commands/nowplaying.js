@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const db = require("../mongoDB");
 module.exports = {
   name: "nowplaying",
-  description: "Get info of current music playing.",
+  description: "Retrieve details about the currently playing music.",
   permissions: "0x0000000000000800",
   options: [],
   run: async (client, interaction) => {
