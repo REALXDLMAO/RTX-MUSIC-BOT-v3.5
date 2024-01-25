@@ -12,7 +12,7 @@ module.exports = {
       options: [
         {
           name: "name",
-          description: "Write your music name.",
+          description: "Put your music name.",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -20,12 +20,12 @@ module.exports = {
     },
     {
       name: "playlist",
-      description: "Write your playlist name.",
+      description: "Put your playlist name.",
       type: ApplicationCommandOptionType.Subcommand,
       options: [
         {
           name: "name",
-          description: "Write the name of the playlist you want to create.",
+          description: "Put the name of the playlist you want to create.",
           type: ApplicationCommandOptionType.String,
           required: true
         }
@@ -83,7 +83,7 @@ module.exports = {
                   interaction
                 })
               } catch (e) {
-                await interaction.editReply({ content: `❌ No results found!!`, ephemeral: true }).catch(e => { })
+                await interaction.editReply({ content: `No results found.`, ephemeral: true }).catch(e => { })
               }
 
               playlist[i]?.playlist?.filter(p => p.name === playlistw).map(async p => {
@@ -121,7 +121,7 @@ module.exports = {
       if (stp === "normal") {
   const name = interaction.options.getString('name');
   if (!name) {
-    return interaction.reply({ content: '▶️ Give Text or link', ephemeral: true }).catch(e => {});
+    return interaction.reply({ content: 'Provide Text or Link.', ephemeral: true }).catch(e => {});
   }
 
   const embed = new EmbedBuilder()
@@ -141,7 +141,7 @@ module.exports = {
     const errorEmbed = new EmbedBuilder()
       .setColor('#e74c3c')
       .setColor('#FF0000')
-      .setDescription('❌ No results found!!');
+      .setDescription('No results found.');
 
     await interaction.editReply({ embeds: [errorEmbed], ephemeral: true }).catch(e => {});
   }
