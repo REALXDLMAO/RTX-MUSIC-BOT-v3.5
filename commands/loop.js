@@ -16,7 +16,7 @@
 const db = require("../mongoDB");
 module.exports = {
   name: "loop",
-  description: "Toggle the music loop mode.",
+  description: "Switch the music loop mode on or off.",
   permissions: "0x0000000000000800",
   options: [],
   voiceChannel: true,
