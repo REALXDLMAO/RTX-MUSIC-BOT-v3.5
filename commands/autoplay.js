@@ -26,15 +26,15 @@ module.exports = {
     try {
       const queue = client?.player?.getQueue(interaction?.guild?.id);
       if (!queue || !queue?.playing) {
-        return interaction?.reply({ content: '⚠️ No music playing!!', ephemeral: true });
+        return interaction?.reply({ content: 'No music playing.', ephemeral: true });
       }
       
       queue?.toggleAutoplay();
       
       const embed = new EmbedBuilder()
         .setColor('#2f58fe')
-        .setTitle('Your Music, Your Call!!')
-        .setDescription(queue?.autoplay ? '**✅ Autoplay ON**' : '**❌ Autoplay OFF**')
+        .setTitle('Your Music, Your Call.')
+        .setDescription(queue?.autoplay ? '**Autoplay is now on.**' : '**Autoplay is now off.**')
         
       
       interaction?.reply({ embeds: [embed] });
