@@ -21,7 +21,7 @@ const { ButtonStyle } = require('discord.js');
 
 module.exports = {
   name: "help",
-  description: "Get information about bot and commands.",
+  description: "Retrieve details about the bot and available commands.",
   permissions: "0x0000000000000800",
   options: [],
 
